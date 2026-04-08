@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>BMI Calculator</h1>
+<div class="calc-box">
+  <input id="weight" type="number" placeholder="Weight (kg)">
+  <input id="height" type="number" placeholder="Height (cm)">
+  <button onclick="calc()">Calculate</button>
+  <p id="result" class="calc-result"></p>
+</div>
+<script>
+function calc(){
+  const w=parseFloat(weight.value),h=parseFloat(height.value)/100;
+  if(!w||!h)return alert("Enter both values");
+  const bmi=(w/(h*h)).toFixed(2);
+  let m=bmi<18.5?"Underweight 😔":bmi<25?"Normal 😊":bmi<30?"Overweight 😐":"Obese 😟";
+  result.textContent=`Your BMI: ${bmi} — ${m}`;
+}
+</script>
+{% endblock %}

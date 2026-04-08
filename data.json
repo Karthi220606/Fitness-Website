@@ -1,0 +1,60 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "pass1",
+      "role": "user"
+    },
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ],
+  "calorie_entries": [
+    {
+      "username": "kk",
+      "date": "2025-10-29",
+      "calories": 120,
+      "notes": ""
+    }
+  ],
+  "store_items": [
+    {
+      "id": 1,
+      "name": "Whey Protein",
+      "price": 29.99,
+      "desc": "Protein powder 2lb"
+    },
+    {
+      "id": 2,
+      "name": "Yoga Mat",
+      "price": 19.99,
+      "desc": "Non-slip mat"
+    }
+  ],
+  "workouts": {
+    "legs": [
+      {
+        "title": "Leg Day 1",
+        "youtube": "https://www.youtube.com/embed/UBMk30rjy0o"
+      },
+      {
+        "title": "Leg Workout at Home",
+        "youtube": "https://www.youtube.com/embed/2tM1LFFxeKg"
+      }
+    ],
+    "shoulder": [
+      {
+        "title": "Shoulder Strength",
+        "youtube": "https://www.youtube.com/embed/0l7T9kRrS0k"
+      }
+    ],
+    "chest": [
+      {
+        "title": "Chest Pump",
+        "youtube": "https://www.youtube.com/embed/IoXQ9b9tM6Y"
+      }
+    ]
+  }
+}

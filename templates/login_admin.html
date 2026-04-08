@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Login</h1>
+<div class="login-box">
+  <input id="username" placeholder="Admin Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login('admin')">Login</button>
+  <p id="msg"></p>
+</div>
+<script>
+async function login(role){
+  const res = await fetch("/api/login",{method:"POST",headers:{'Content-Type':'application/json'},body:JSON.stringify({username:username.value,password:password.value})});
+  const data = await res.json();
+  msg.textContent = data.ok ? "✅ Welcome Admin!" : "❌ Invalid credentials";
+  if(data.ok) setTimeout(()=>window.location.href="/",1500);
+}
+</script>
+{% endblock %}

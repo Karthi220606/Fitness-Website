@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Workout Splits</h1>
+<div class="cards">
+  <a href="{{ url_for('workouts', section='legs') }}" class="card"><i class="fas fa-running"></i><h3>Legs</h3></a>
+  <a href="{{ url_for('workouts', section='shoulder') }}" class="card"><i class="fas fa-user-alt"></i><h3>Shoulder</h3></a>
+  <a href="{{ url_for('workouts', section='chest') }}" class="card"><i class="fas fa-heart"></i><h3>Chest</h3></a>
+</div>
+{% endblock %}

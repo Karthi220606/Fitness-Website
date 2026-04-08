@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Calorie Tracker</h1>
+<div class="calc-box">
+  <input id="username" placeholder="Username">
+  <input id="calories" type="number" placeholder="Calories">
+  <input id="notes" placeholder="Notes">
+  <button onclick="addEntry()">Add</button>
+</div>
+<table id="tbl"><tr><th>Date</th><th>Calories</th><th>Notes</th></tr></table>
+
+<script>
+async function addEntry(){
+  const body={username:username.value,calories:+calories.value,notes:notes.value};
+  await fetch('/api/calorie_entry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  load();
+}
+async function load(){
+  const res=await fetch('/api/calorie_entry?username='+username.value);
+  const d=await res.json();tbl.innerHTML='<tr><th>Date</th><th>Calories</th><th>Notes</th></tr>';
+  d.entries.forEach(e=>tbl.innerHTML+=`<tr><td>${e.date}</td><td>${e.calories}</td><td>${e.notes}</td></tr>`);
+}
+</script>
+{% endblock %}

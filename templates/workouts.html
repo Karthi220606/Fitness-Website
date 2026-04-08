@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ section.capitalize() }} Workouts</h1>
+<div class="video-grid">
+  {% for w in workouts %}
+  <div class="video-card">
+    <h3>{{ w.title }}</h3>
+    <iframe src="{{ w.youtube }}" allowfullscreen></iframe>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

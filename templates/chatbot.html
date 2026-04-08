@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>AI Fitness Chatbot</h1>
+<div class="chatbox">
+  <input id="msg" placeholder="Ask something about diet/workout...">
+  <button class="btn chat-send" onclick="send()">Send</button>
+  <p id="reply"></p>
+</div>
+<script>
+function send(){
+  const m=msg.value.toLowerCase();
+  reply.textContent=m.includes('diet')?"Eat protein, fiber, and whole grains 🥗":
+                    m.includes('workout')?"Do 4-5 sessions weekly 💪":
+                    "Stay consistent and hydrated 💧";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Calorie Finder</h1>
+<div class="calc-box">
+  <input id="food" placeholder="e.g. Banana">
+  <button onclick="find()">Find</button>
+  <p id="result" class="calc-result"></p>
+</div>
+<script>
+function find(){
+  const f=food.value.toLowerCase();
+  const list={apple:52,banana:89,egg:68,rice:130,chicken:239};
+  result.textContent=list[f]?`${f.toUpperCase()} has ${list[f]} kcal/100g.`:"Not found!";
+}
+</script>
+{% endblock %}

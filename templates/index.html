@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to FitAll</h1>
+<p>Your one-stop platform for workouts, diet, and progress tracking.</p>
+
+<section class="cards">
+  <a href="{{ url_for('bmi') }}" class="card"><i class="fas fa-calculator"></i><h3>BMI Calculator</h3><p>Calculate your Body Mass Index instantly.</p></a>
+  <a href="{{ url_for('calorie_finder') }}" class="card"><i class="fas fa-fire"></i><h3>Calorie Finder</h3><p>Find calorie content of your favorite food.</p></a>
+  <a href="{{ url_for('calorie_tracker') }}" class="card"><i class="fas fa-clipboard-list"></i><h3>Calorie Tracker</h3><p>Track your daily calorie intake easily.</p></a>
+  <a href="{{ url_for('workout_splits') }}" class="card"><i class="fas fa-dumbbell"></i><h3>Workout Splits</h3><p>Explore guided YouTube workout tutorials.</p></a>
+  <a href="{{ url_for('store') }}" class="card"><i class="fas fa-store"></i><h3>Supplement Store</h3><p>Buy trusted fitness products.</p></a>
+  <a href="{{ url_for('chatbot') }}" class="card"><i class="fas fa-robot"></i><h3>AI Chatbot</h3><p>Ask your AI coach anything about fitness.</p></a>
+</section>
+{% endblock %}

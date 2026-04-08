@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>User Login</h1>
+<div class="login-box">
+  <input id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login('user')">Login</button>
+  <p id="msg"></p>
+</div>
+<script>
+async function login(role){
+  const res = await fetch("/api/login",{method:"POST",headers:{'Content-Type':'application/json'},body:JSON.stringify({username:username.value,password:password.value})});
+  const data = await res.json();
+  msg.textContent = data.ok ? "✅ Login Successful" : "❌ Invalid credentials";
+  if(data.ok) setTimeout(()=>window.location.href="/",1500);
+}
+</script>
+{% endblock %}

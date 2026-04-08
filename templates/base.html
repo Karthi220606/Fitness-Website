@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitAll - Fitness Platform</title>
+  <link rel="stylesheet" href="../static/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0b6a73c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">🏋️‍♂️ FitAll</div>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('bmi') }}">BMI</a></li>
+      <li><a href="{{ url_for('calorie_finder') }}">Calories</a></li>
+      <li><a href="{{ url_for('calorie_tracker') }}">Tracker</a></li>
+      <li><a href="{{ url_for('workout_splits') }}">Workouts</a></li>
+      <li><a href="{{ url_for('store') }}">Store</a></li>
+      <li><a href="{{ url_for('chatbot') }}">Chatbot</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 FitAll | Designed by Mahesh Kumar</p>
+  </footer>
+</body>
+</html>
